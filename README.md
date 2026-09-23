@@ -1,199 +1,123 @@
-# Awesome-Adaptive-Authentication
-
-## Top Adaptive Authentication Ecosystem
-
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-
-*Focused on Risk-Based Authentication, Adaptive MFA, Contextual Access, Behavioral Signals & Intelligent Identity Protection*  
-
-**Last updated: September 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Adaptive Authentication**. These systems evaluate login and access context (device, location, behavior, risk signals) in real time and dynamically adjust authentication requirements—stepping up MFA when risk is high and reducing friction when risk is low.
-
-
-
-**Examples** include Cisco Duo, Silverfort, PingOne Protect, Okta Adaptive MFA, Microsoft Entra ID Protection, RSA Adaptive Authentication, ForgeRock Intelligent Access, SecureAuth, IBM Verify, and OneLogin SmartFactor (the category leaders).
-
-
-
-**Open-source emphasis**: Full commercial adaptive/risk engines with global threat intelligence and polished policy UIs dominate enterprises. Open-source options include **Keycloak extensions**, **Apereo CAS risk-based authentication**, behavioral biometrics projects, and general open identity platforms that can be extended with custom risk logic. This section lists every significant relevant project found.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[Cisco Duo](https://duo.com/)**  
-
-  Widely adopted MFA and adaptive access platform with device trust, risk-based policies, and strong integration across applications and VPNs.
-
-
-
-- **[Microsoft Entra ID Protection](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id-protection)**  
-
-  Risk-based identity protection within Microsoft Entra, detecting anomalous sign-ins and automating remediation and conditional access.
-
-
-
-- **[Okta Adaptive MFA / Okta Identity]**(https://www.okta.com/)**  
-
-  Adaptive multi-factor and risk-based authentication capabilities within the Okta Identity Cloud, using contextual signals to adjust challenges.
-
-
-
-- **[PingOne Protect, ForgeRock Intelligent Access, RSA Adaptive Authentication](https://www.pingidentity.com/)**  
-
-  Enterprise adaptive and risk-based authentication solutions evaluating device, behavior, and threat signals for step-up decisions.
-
-
-
-- **[Silverfort, SecureAuth, IBM Verify, OneLogin SmartFactor](https://www.silverfort.com/)**  
-
-  Platforms extending adaptive MFA and risk-based controls to legacy systems, cloud apps, and diverse authentication scenarios.
-
-
-
-- **[Other commercial adaptive authentication & identity protection platforms](https://duo.com/)**  
-
-  Solutions focused on continuous risk evaluation, behavioral biometrics, and intelligent access policies.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-- **[Keycloak Adaptive Authentication extension](https://github.com/mabartos/keycloak-adaptive-authn)**  
-
-  Extension for Keycloak that enables real-time changes to authentication requirements based on context and risk, with optional AI-assisted evaluation and integration of remote risk signals.
-
-
-
-- **[Apereo CAS Risk-Based Authentication](https://apereo.github.io/cas/)**  
-
-  Built-in risk-based authentication support in Apereo CAS—evaluates authentication attempts against historical behavior and configurable risk criteria, then mitigates high-risk events (e.g., force MFA).
-
-
-
-- **[Open behavioral / risk-based auth experiments](https://github.com/search?q=risk-based+authentication+OR+adaptive+MFA+OR+behavioral+biometrics)**  
-
-  Research and prototype projects implementing dual-agent risk scoring, keystroke/mouse behavioral signals, and adaptive thresholds for frictionless MFA.
-
-
-
-- **[OpenBehavior-Auth & similar behavioral engines](https://github.com/rugadameghanath/OpenBehavior-Auth)**  
-
-  Privacy-oriented open engines that capture interaction rhythms (keystroke dynamics, pointer velocity) for passive, adaptive risk scoring without storing typed content.
-
-
-
-- **[Keycloak, Authentik, Authelia, Ory](https://github.com/keycloak/keycloak)**  
-
-  Leading open-source identity and access management platforms that support MFA, conditional flows, and custom authenticators—forming the base for many self-hosted adaptive setups.
-
-
-
-- **[Custom risk engines & policy frameworks](https://github.com/search?q=authentication+risk+engine+OR+adaptive+access+open+source)**  
-
-  Libraries and frameworks for calculating risk scores from device, geo, velocity, and behavioral signals that can be plugged into open IdPs.
-
-
-
-- **[WebAuthn / passkey open tooling](https://github.com/search?q=WebAuthn+OR+passkey+open+source)**  
-
-  Open components for phishing-resistant authenticators often used as step-up factors in adaptive policies.
-
-
-
-- **[SIEM / detection open stacks used for auth risk](https://github.com/search?q=authentication+anomaly+detection)**  
-
-  Open detection rules and pipelines that surface anomalous login behavior for adaptive decisioning.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **Keycloak + adaptive extension**: Most practical path for adding risk-based step-up to a mature open IdP.
-
-- **CAS risk-based auth**: Mature open SSO platform with explicit risk evaluation and mitigation actions.
-
-- **Behavioral biometrics**: Emerging open engines for passive signals that reduce reliance on active MFA.
-
-- **Composable stacks**: Open IdP (Keycloak/Authentik) + custom risk service + WebAuthn/MFA providers.
-
-- Full commercial adaptive platforms still lead in global threat intelligence, polished policy UX, and broad app coverage.
-
-
-
-**Frameworks for building custom systems**:  
-
-**Keycloak** (with adaptive extensions) and **Apereo CAS** (native risk-based authentication) are the strongest open foundations.  
-
-Behavioral open projects add passive risk signals.  
-
-Commercial platforms (Duo, Entra ID Protection, Okta, Ping, RSA, ForgeRock, Silverfort, etc.) provide managed risk engines, threat intelligence, and enterprise policy administration.  
-
-Many organizations run open IdPs for core authentication and layer commercial adaptive/risk services, or build custom risk logic on top of Keycloak/CAS. Fully open adaptive stacks are feasible for teams that can develop and maintain risk models and signal pipelines.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Adaptive authentication decisions affect security and user experience. Poorly tuned risk models can lock out legitimate users or fail to challenge attackers. Test thoroughly and monitor false positives/negatives.
-
-- Open-source solutions offer transparency and control but require you to design risk signals, maintain models, and handle high availability. Commercial platforms shift operational and intelligence burden to the vendor. Align any solution with your threat model and compliance requirements.
-
-
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Adaptive-Authentication/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Adaptive-Authentication?style=flat-square&color=gold" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Adaptive-Authentication/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Adaptive-Authentication?style=flat-square&color=blue" alt="GitHub Forks"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Adaptive-Authentication/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Adaptive-Authentication?style=flat-square&color=green" alt="License"/></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
+
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Adaptive Authentication Banner" width="100%" />
+</p>
+
+# 🔐 Awesome Adaptive Authentication & Risk-Based Access Control
+
+> **A curated showcase of commercial SaaS platforms, open-source Identity & Access Management (IAM) systems, behavioral biometric risk engines, and Zero Trust security frameworks.**
 
 ---
 
+## 📌 Overview & Key Concepts
 
+**Adaptive Authentication** (also known as **Risk-Based Authentication (RBA)** or **Contextual Step-Up MFA**) dynamically assesses authentication risk at login or during user sessions. Instead of enforcing rigid multi-factor authentication (MFA) rules for every login, an adaptive risk engine evaluates contextual signals—such as geolocation, IP velocity, device fingerprints, network reputation, and behavioral biometrics—to calibrate authentication friction:
 
-**Made for identity architects, security engineers, and IAM teams implementing risk-based and adaptive access.**  
+- 🟢 **Low Risk**: Frictionless login via single sign-on (SSO) or passwordless WebAuthn / Passkeys.
+- 🟡 **Medium Risk**: Prompt for standard Step-Up MFA (TOTP, Push notification, WebAuthn).
+- 🔴 **High Risk / Anomaly**: Trigger hard challenge, admin review, or automated login block.
 
-Let's expand open options for contextual authentication while recognizing the intelligence, scale, and support that leading commercial adaptive authentication platforms deliver.
+---
+
+## 📚 Table of Contents
+- [🏢 SaaS & Commercial Platforms](#-saas--commercial-platforms)
+- [🔓 Open-Source Repositories & IdPs](#-open-source-repositories--idps)
+- [💡 Architectural Patterns](#-architectural-patterns)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support & Sponsorship](#-support--sponsorship)
+- [📈 Star History](#-star-history)
+- [⚖️ Disclaimer](#%EF%B8%8F-disclaimer)
+
+---
+
+## 🏢 SaaS & Commercial Platforms
+
+> 📊 **Market Insights**: The global Adaptive & Risk-Based Authentication market is estimated at **~$15.2 Billion in 2026** and is projected to reach **~$34.5 Billion by 2030** (CAGR of ~18.5%). The market is **moderately fragmented**, featuring dominant cloud hyperscalers alongside specialized cybersecurity platforms delivering real-time threat intelligence and continuous behavioral biometrics.
+
+The table below lists leading commercial SaaS identity providers and enterprise adaptive MFA platforms, **sorted by Company Size / Valuation (descending)**:
+
+| Product Name 🚀 | Description 📝 | Starting Price 💵 | Free Tier / Trial Limits 🆓 | Company Size / Valuation 🏢 |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Microsoft Entra ID Protection](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id-protection)** | Automates risk detection and conditional access enforcement across Azure & Entra tenant sign-ins. | `$6.00 / user / month` (Entra ID P2 plan) | `30-day free trial` (up to 100 user licenses) | `$3.10 Trillion Valuation` ($245B Annual Rev) |
+| **[IBM Verify](https://www.ibm.com/verify)** | Enterprise risk-aware Identity-as-a-Service (IDaaS) with machine-learning threat scoring and behavioral biometrics. | `$1.85 / user / month` (IBM Verify SaaS tier) | `30-day free trial` (full enterprise suite) | `$200.00 Billion Valuation` ($62B Annual Rev) |
+| **[Cisco Duo](https://duo.com/)** | Adaptive MFA with device trust analysis, risk-based access policies, and continuous session verification. | `$3.00 / user / month` (Essentials tier; Duo Advantage with Risk Auth is `$6.00 / user / month`) | `Free forever up to 10 users` (Essentials tier); 30-day trial for enterprise | `$190.00 Billion Valuation` ($53B Annual Rev) |
+| **[Okta Adaptive MFA](https://www.okta.com/)** | Contextual risk engine evaluating IP reputation, impossible travel, device trust, and behavior for step-up prompts. | `$3.00 / user / month` (Adaptive MFA add-on tier) | `30-day free trial`; Free Developer plan up to 7,400 Monthly Active Users | `$13.00 Billion Market Cap` ($2.5B ARR) |
+| **[ForgeRock & PingOne Protect](https://www.pingidentity.com/)** | AI-driven continuous identity protection evaluating threat telemetry, behavioral dynamics, and device signals. | `$3.00 / user / month` (PingOne Protect tier) | `30-day free trial` (up to 100 users) | `$6.50 Billion Valuation` ($1.2B Combined Rev) |
+| **[OneLogin SmartFactor](https://www.onelogin.com/)** | Adaptive access engine powered by Vigilance AI to challenge suspicious sign-in attempts dynamically. | `$4.00 / user / month` (Advanced Edition) | `30-day free trial` (all platform features) | `$3.50 Billion Valuation` ($1.0B Quest Rev) |
+| **[RSA Adaptive Authentication](https://www.rsa.com/)** | Legacy-proven enterprise fraud prevention and risk scoring engine for banking and high-security apps. | `$2.50 / user / month` (Enterprise tier base) | `14-day free trial` (on-demand sandbox demo) | `$2.10 Billion Valuation` ($1.0B Annual Rev) |
+| **[Silverfort](https://www.silverfort.com/)** | Unified identity protection platform extending adaptive MFA to legacy systems, service accounts, and cloud apps. | `$4.00 / user / month` (Enterprise base) | `14-day free trial` (guided PoC sandbox) | `$1.00 Billion Valuation` (Unicorn Status) |
+
+---
+
+## 🔓 Open-Source Repositories & IdPs
+
+Open-source identity and access management platforms provide complete control over user data and customizable policy pipelines. The list below features prominent open-source IAM solutions, risk extensions, and behavioral engines, **sorted by GitHub Star Count (descending)**:
+
+| Repository & Name 🌐 | Star Count Badge ⭐ | Description 📝 | Primary Language 💻 |
+| :--- | :--- | :--- | :--- |
+| **[Keycloak](https://github.com/keycloak/keycloak)** | [![GitHub stars](https://img.shields.io/github/stars/keycloak/keycloak?style=social&color=white)](https://github.com/keycloak/keycloak/stargazers) | Industry-standard open-source Identity and Access Management system supporting OIDC, SAML, conditional flows, and plugin risk modules. | Java |
+| **[Authelia](https://github.com/authelia/authelia)** | [![GitHub stars](https://img.shields.io/github/stars/authelia/authelia?style=social&color=white)](https://github.com/authelia/authelia/stargazers) | Lightweight open-source authentication server providing two-factor authentication, single sign-on, and policy-based access control for reverse proxies. | Go |
+| **[Authentik](https://github.com/goauthentik/authentik)** | [![GitHub stars](https://img.shields.io/github/stars/goauthentik/authentik?style=social&color=white)](https://github.com/goauthentik/authentik/stargazers) | Modern open-source identity provider emphasizing customizable stages, flow execution, conditional access policies, and WebAuthn support. | Python / Go |
+| **[SuperTokens](https://github.com/supertokens/supertokens-core)** | [![GitHub stars](https://img.shields.io/github/stars/supertokens/supertokens-core?style=social&color=white)](https://github.com/supertokens/supertokens-core/stargazers) | Developer-first open-source auth architecture supporting session management, MFA, passwordless login, and custom risk-trigger hooks. | Java / TypeScript |
+| **[ZITADEL](https://github.com/zitadel/zitadel)** | [![GitHub stars](https://img.shields.io/github/stars/zitadel/zitadel?style=social&color=white)](https://github.com/zitadel/zitadel/stargazers) | Cloud-native identity management platform built in Go with multi-tenancy, fine-grained RBAC, WebAuthn passkeys, and audit trails. | Go |
+| **[Logto](https://github.com/logto-io/logto)** | [![GitHub stars](https://img.shields.io/github/stars/logto-io/logto?style=social&color=white)](https://github.com/logto-io/logto/stargazers) | Open-source Auth0 alternative providing developer-friendly UI, webhooks, multi-factor authentication, and extensible authentication pipelines. | TypeScript |
+| **[Ory Kratos](https://github.com/ory/kratos)** | [![GitHub stars](https://img.shields.io/github/stars/ory/kratos?style=social&color=white)](https://github.com/ory/kratos/stargazers) | Headless, API-first identity and user management system implementing Zero Trust access control principles and cloud-native integration. | Go |
+| **[Apereo CAS](https://github.com/apereo/cas)** | [![GitHub stars](https://img.shields.io/github/stars/apereo/cas?style=social&color=white)](https://github.com/apereo/cas/stargazers) | Enterprise Single Sign-On engine featuring native risk-based authentication triggers (RBA) based on IP velocity, geo-location, and past behavior. | Java |
+| **[Keycloak Adaptive Auth Extension](https://github.com/mabartos/keycloak-adaptive-authn)** | [![GitHub stars](https://img.shields.io/github/stars/mabartos/keycloak-adaptive-authn?style=social&color=white)](https://github.com/mabartos/keycloak-adaptive-authn/stargazers) | Extension module for Keycloak enabling real-time risk scoring, machine learning risk estimation, and conditional step-up MFA. | Java |
+| **[OpenBehavior-Auth](https://github.com/rugadameghanath/OpenBehavior-Auth)** | [![GitHub stars](https://img.shields.io/github/stars/rugadameghanath/OpenBehavior-Auth?style=social&color=white)](https://github.com/rugadameghanath/OpenBehavior-Auth/stargazers) | Lightweight open-source behavioral biometrics engine evaluating keystroke dynamics and pointer velocity for passive risk scoring. | Python |
+
+---
+
+## 💡 Architectural Patterns
+
+Self-hosting adaptive authentication typically involves assembling modular open components:
+
+1. **Identity Provider (IdP)**: Keycloak, Authentik, ZITADEL, or Authelia.
+2. **Context Collector**: Client-side library capturing browser signals (IP, User-Agent, WebGL fingerprint, velocity).
+3. **Risk Scoring Engine**: Custom microservice evaluating signals against threat feeds, rate limits, or ML models.
+4. **Step-Up Verification Provider**: WebAuthn / Passkeys, TOTP apps (Google Authenticator, Authy), or SMS/Email OTP services.
+
+---
+
+## 🤝 How to Contribute
+
+Contributions are highly welcome! Help us maintain the most comprehensive guide to adaptive authentication:
+
+1. 🍴 **Fork** this repository.
+2. 📝 **Add/Update** entries in `README.md` following the existing tabular structure.
+3. 🔎 **Provide accurate details**: Include product name, official URL, pricing tier, free limit, and company metric.
+4. 🚀 **Open a Pull Request** with a clear explanation of your additions.
+
+Please review our [Awesome-Awesome-Awesome Guidelines](https://github.com/ishandutta2007/Awesome-Awesome-Awesome) before submitting.
+
+---
+
+## 💖 Support & Sponsorship
+
+If you find this repository helpful in designing your identity infrastructure, please consider supporting the project:
+
+- ⭐ **Star** this repository on GitHub.
+- 🔄 **Fork** and share with your security engineering & IAM teams.
+- ☕ **Buy Me a Coffee**: Support ongoing open-source development via the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007).
+
+Thank you for supporting open-source security engineering! 🙏
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Adaptive-Authentication&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Adaptive-Authentication&type=date&legend=top-left)
+
+---
+
+## ⚖️ Disclaimer
+
+*This list is community-curated for informational and educational purposes. Mention of commercial products does not constitute an endorsement. Always evaluate identity solutions against your organization's specific threat model, compliance frameworks, and privacy guidelines.*

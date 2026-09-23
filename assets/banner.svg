@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#060911" />
+    </linearGradient>
+
+    <!-- Shield Glow Gradient -->
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Accent Linear Gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" stroke-opacity="0.5" />
+    </pattern>
+  </defs>
+
+  <style>
+    /* CSS Animations for Dynamic Aspects */
+    @keyframes pulseGlow {
+      0% { transform: scale(0.98); opacity: 0.4; }
+      50% { transform: scale(1.04); opacity: 0.8; }
+      100% { transform: scale(0.98); opacity: 0.4; }
+    }
+
+    @keyframes scanBeam {
+      0% { transform: translateY(-100px); opacity: 0; }
+      30% { opacity: 0.6; }
+      70% { opacity: 0.6; }
+      100% { transform: translateY(320px); opacity: 0; }
+    }
+
+    @keyframes nodeFloat {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(5px, -8px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes dashMove {
+      to { stroke-dashoffset: -40; }
+    }
+
+    .glow-circle {
+      transform-origin: 1000px 160px;
+      animation: pulseGlow 6s ease-in-out infinite;
+    }
+
+    .scanner-line {
+      animation: scanBeam 7s linear infinite;
+    }
+
+    .animated-node {
+      animation: nodeFloat 4s ease-in-out infinite;
+    }
+
+    .pulse-ring {
+      animation: dashMove 3s linear infinite;
+    }
+
+    .title-text {
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      fill: url(#titleGrad);
+    }
+
+    .subtitle-text {
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+      font-weight: 400;
+      font-size: 19px;
+      fill: #94a3b8;
+    }
+
+    .badge-tag {
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      fill: #38bdf8;
+    }
+  </style>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="320" fill="url(#bgGrad)" rx="12" />
+  <rect width="1200" height="320" fill="url(#grid)" rx="12" />
+
+  <!-- Dynamic Animated Scanline Beam (in Background) -->
+  <g opacity="0.4">
+    <line class="scanner-line" x1="0" y1="0" x2="1200" y2="0" stroke="#38bdf8" stroke-width="3" filter="drop-shadow(0 0 8px #38bdf8)" />
+  </g>
+
+  <!-- Right side graphic: Dynamic Cybersecurity & Adaptive Identity Shield Node Network -->
+  <g transform="translate(150, 0)">
+    <!-- Radial Ambient Glow -->
+    <circle class="glow-circle" cx="850" cy="160" r="160" fill="url(#glowGrad)" />
+
+    <!-- Outer Pulsing Orbit Ring -->
+    <circle class="pulse-ring" cx="850" cy="160" r="110" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.5" />
+    <circle cx="850" cy="160" r="80" fill="none" stroke="#818cf8" stroke-width="1" stroke-dasharray="4 4" opacity="0.6" />
+
+    <!-- Connecting Security Signal Nodes (Background Layer) -->
+    <path d="M 770 120 L 850 160 L 930 110 M 850 160 L 910 220 M 850 160 L 780 210" fill="none" stroke="#334155" stroke-width="2" />
+
+    <!-- Node Circles -->
+    <g class="animated-node">
+      <circle cx="770" cy="120" r="6" fill="#38bdf8" />
+      <text x="750" y="105" class="badge-tag" font-size="11">Device Risk</text>
+    </g>
+    <g class="animated-node" style="animation-delay: -1s;">
+      <circle cx="930" cy="110" r="6" fill="#818cf8" />
+      <text x="920" y="95" class="badge-tag" font-size="11">Geo-Location</text>
+    </g>
+    <g class="animated-node" style="animation-delay: -2s;">
+      <circle cx="910" cy="220" r="6" fill="#c084fc" />
+      <text x="900" y="240" class="badge-tag" font-size="11">Behavioral Biometrics</text>
+    </g>
+    <g class="animated-node" style="animation-delay: -3s;">
+      <circle cx="780" cy="210" r="6" fill="#4ade80" />
+      <text x="730" y="230" class="badge-tag" font-size="11">Step-up MFA</text>
+    </g>
+
+    <!-- Center Security Shield -->
+    <g transform="translate(850, 160) scale(1.1)">
+      <!-- Shield Outer Outline -->
+      <path d="M 0 -35 L 28 -20 V 5 C 28 24 0 38 0 38 C 0 38 -28 24 -28 5 V -20 Z" fill="#0f172a" stroke="#38bdf8" stroke-width="3" filter="drop-shadow(0 0 10px rgba(56, 189, 248, 0.5))" />
+      <!-- Lock Core -->
+      <path d="M -8 -2 V -8 C -8 -13 -4 -16 0 -16 C 4 -16 8 -13 8 -8 V -2" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+      <rect x="-10" y="-2" width="20" height="16" rx="3" fill="#38bdf8" />
+      <circle cx="0" cy="5" r="2.5" fill="#0f172a" />
+    </g>
+  </g>
+
+  <!-- Left Side Text (Foreground Content - Guaranteed Unobscured) -->
+  <g transform="translate(60, 0)">
+    <!-- Top Category Pill -->
+    <rect x="0" y="55" width="280" height="28" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" />
+    <text x="14" y="74" class="badge-tag">🔒 ZERO TRUST &amp; IAM SECURITY</text>
+
+    <!-- Main Title -->
+    <text x="0" y="132" class="title-text">Awesome Adaptive Authentication</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="172" class="subtitle-text">Curated SaaS Products, Open-Source Repositories &amp;</text>
+    <text x="0" y="200" class="subtitle-text">Risk-Based Identity Protection Frameworks</text>
+
+    <!-- Bottom Feature Tags -->
+    <g transform="translate(0, 230)">
+      <rect x="0" y="0" width="115" height="26" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="12" y="17" fill="#cbd5e1" font-family="sans-serif" font-size="12" font-weight="500">🛡️ Adaptive MFA</text>
+
+      <rect x="125" y="0" width="150" height="26" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="137" y="17" fill="#cbd5e1" font-family="sans-serif" font-size="12" font-weight="500">⚡ Risk-Based Access</text>
+
+      <rect x="285" y="0" width="140" height="26" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="297" y="17" fill="#cbd5e1" font-family="sans-serif" font-size="12" font-weight="500">🌐 Open Source IdPs</text>
+    </g>
+  </g>
+</svg>
